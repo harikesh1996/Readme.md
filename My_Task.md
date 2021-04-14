@@ -11,11 +11,10 @@
 
   # How does the formulae work? 
   
-           1.Get the average of a group of numbers
+           1.Get the average of a rating of numbers. 
            2.Syntax = SUM(COUNTIF(range,"string1")*number1,COUNTIF(range,"string2")*number2)/COUNTA(range)
-           3.The AVERAGE function calculates the average of string. To calculate the average, Excel sums all string and divides by the count of numeric values.
-           This behavior can be replicated with the SUM and COUNT functions.
-
+           3. Average, which is the arithmetic mean, and is calculated & countif means range selected by adding a group of numbers and then dividing by the count   of range numbers.
+            
 
 # Test Cases 
 
@@ -32,4 +31,5 @@
 # Conclusion
 
 I have complete in my task.
+
 
