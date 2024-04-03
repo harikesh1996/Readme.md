@@ -257,7 +257,27 @@ User & Password create for squid Authenticate
 
   ![Screenshot from 2024-04-03 15-01-54](https://github.com/harikesh1996/readme.md/assets/82168975/8aaf2a4f-b132-4fd0-b7c9-47c22a12163c)
 
+- >> For Database creation.
 
+		dsconf -D "cn=Directory Manager" ldap://localhost:3389 backend create --suffix "dc=keenable,dc=in" --be-name "keenable.in"
+  
+
+![Screenshot from 2024-04-03 15-06-53](https://github.com/harikesh1996/readme.md/assets/82168975/0901f230-e8cf-4902-9af7-ec65ecad92bc)
+
+client1@client1:~$ sudo vim org.ldif
+
+dn: dc=keenable,dc=com
+
+objectClass: top
+
+objectClass: domain
+
+dc: keenable
+
+
+
+ 
+ 
 
 
 
