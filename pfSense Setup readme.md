@@ -45,12 +45,31 @@ Bash Script:-
 	-e DS_DM_PASSWORD=<password> \
 	docker.io/389ds/dirsrv
 
+![Screenshot from 2024-04-01 13-22-42](https://github.com/harikesh1996/readme.md/assets/82168975/215baf32-2292-4752-af7c-09d658a562f9)
+
+
 Run this script…
 
 ./ldap.ssh
 
 Check pod list
-   podman pod ps
 
-   ![alt text](<Screenshot from 2024-04-01 13-28-32.png>)
+    podman pod ps
+
+![Screenshot from 2024-04-01 13-28-32](https://github.com/harikesh1996/readme.md/assets/82168975/9ec50b50-73c9-4e71-b92d-b31ff8c97715)
+
+
+Check container list 
+
+	podman ps
+
+ ![Screenshot from 2024-04-01 15-43-29](https://github.com/harikesh1996/readme.md/assets/82168975/d87a4899-3b3e-443e-89d0-34b95853930e)
+
+[5.2]. Setup ApacheDirectory studio for ldap db UI
+1. Install ApacheDirectory studio tar file and extract in directory
+2. open apache directory
+
+
+
+
    
