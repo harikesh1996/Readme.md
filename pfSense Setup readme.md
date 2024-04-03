@@ -412,8 +412,25 @@ sudo nano /usr/lib/squid/ext_ldap_al_acl
 	ldapsearch -x -H "$LDAP_SERVER" -b "$SEARCH_BASE" -D "$BIND_DN" -w "$BIND_PW" -LLL "(uid=$USER_UID)" dn | grep -q "$1"
  ![Screenshot from 2024-04-03 17-44-17](https://github.com/harikesh1996/readme.md/assets/82168975/ba4fffd3-daa2-4886-84b3-6eec87cbd9f8)
 
+For execute permission
 
- 
+ 		chmod +x /usr/lib/squid/ext_ldap_al.acl
+----------------------------------------------------------------
+
+
+		 sudo tail -n 50 /var/log/squid/access.log
+
+![Screenshot from 2024-04-03 17-47-34](https://github.com/harikesh1996/readme.md/assets/82168975/e90b35e3-ed99-4b5d-a5c4-2f58e6af3d8c)
+
+ Apache Directory Studio
+![Screenshot from 2024-04-03 17-48-14](https://github.com/harikesh1996/readme.md/assets/82168975/e29bc562-ed9b-4288-8e16-92b113f13d81)
+
+User authentication by ldap user.
+![Screenshot from 2024-04-03 17-49-01](https://github.com/harikesh1996/readme.md/assets/82168975/6a21c600-97b4-4091-b360-1ed980b9040d)
+![Screenshot from 2024-04-03 17-49-58](https://github.com/harikesh1996/readme.md/assets/82168975/82682b14-b826-4e47-abc8-9cc3c096c011)
+
+###### ThankYou
+
 
 		
 		
