@@ -350,6 +350,8 @@ client1@client1:~$ cat all.ldif
 	cn: Poojamam
 	sn: mam
 	userPassword: 12345
+ ![Screenshot from 2024-04-03 17-28-46](https://github.com/harikesh1996/readme.md/assets/82168975/c13ecb59-0357-4079-8a68-484c68f385ee)
+
 
 - >>> Run this command to add **"all.ldif"**
 
@@ -363,18 +365,65 @@ client1@client1:~$ cat all.ldif
 
 ![Screenshot from 2024-04-03 16-07-26](https://github.com/harikesh1996/readme.md/assets/82168975/4ee9b3db-6cb9-4a23-bd12-39699447134c)
 
+##### Squid.conf
+		podman exec -it squid /bin/bash
+  -----------------------------------------------
+	
+ 	vim /etc/squid/squid.conf
+	 # LDAP authentication for all users
+	auth_param basic program /usr/lib/squid/basic_ldap_auth \
+	  -b "dc=keenable,dc=com" \
+	  -h ldap://10.0.0.15:3389 \
+	  -D "cn=Directory Manager" -w "12345" \
+	  -s sub -f "(&(objectclass=inetOrgPerson)(uid=%s))"
+	auth_param basic children 50
+	auth_param basic realm Web-Proxy
+	auth_param basic credentialsttl 1 minute
+	
+	# Define ACL for LDAP authentication
+	acl ldap-auth proxy_auth REQUIRED
+	
+	http_access allow ldap-auth
+	
+	# YouTube blocking
+	external_acl_type interns_ldap_acl %LOGIN /usr/lib/squid/ext_ldap_interns_acl -b "dc=keenable,dc=com" -D "cn=Directory Manager" -w "12345"
+	acl interns_users external interns_ldap_acl
+	
+	# ACL for YouTube
+	acl youtube dstdomain .youtube.com
+	
+	# Block YouTube for the specific LDAP user 'raju123'
+	http_access deny youtube interns_users
+	
+	http_access allow ldap-auth
+
+-------------------------------------------------
+sudo nano /usr/lib/squid/ext_ldap_al_acl
+
+	 #!/bin/bash
+	SEARCH_BASE="dc=keenable,dc=in"
+	LDAP_SERVER="ldap://10.0.0.15:3389"
+	BIND_DN="cn=Directory Manager"
+	BIND_PW="12345"
+	
+	# Extract uid from the provided username
+	USER_UID=$(echo $1 | cut -d "@" -f 1)
+	
+	ldapsearch -x -H "$LDAP_SERVER" -b "$SEARCH_BASE" -D "$BIND_DN" -w "$BIND_PW" -LLL "(uid=$USER_UID)" dn | grep -q "$1"
+
  
+
+		
+		
+		
+	
+	 
+	 
 	
 	
 	
-
- 
- 
-
-
-
-
-
+	
+	
 
 
 
