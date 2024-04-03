@@ -278,7 +278,8 @@ dc: keenable
 
 - >>> Run this command to add **"org.ldif"**
 
-	ldapadd -a -c -xH ldap://localhost:3389 -D "cn=Directory Manager" -W -f org.ldif
+		ldapadd -a -c -xH ldap://localhost:3389 -D "cn=Directory Manager" -W -f org.ldif
+
 ![Screenshot from 2024-04-03 15-11-55](https://github.com/harikesh1996/readme.md/assets/82168975/a22378cc-2127-4a61-9ed0-b7163c81c758)
 ![Screenshot from 2024-04-03 15-12-58](https://github.com/harikesh1996/readme.md/assets/82168975/c8190f09-bb75-4603-b6f6-efb6414376e1)
 
@@ -349,6 +350,18 @@ client1@client1:~$ cat all.ldif
 	cn: Poojamam
 	sn: mam
 	userPassword: 12345
+
+- >>> Run this command to add **"all.ldif"**
+
+ 		 ldapadd -a -c -xH ldap://localhost:3389 -D "cn=Directory Manager" -W -f all.ldif
+
+![Screenshot from 2024-04-03 17-25-39](https://github.com/harikesh1996/readme.md/assets/82168975/c461e5b5-db59-4e03-b52b-841c9890bc0d)
+
+  
+    
+		 ldapsearch -xH ldap://localhost:3389 -D "cn=Directory Manager" -w "12345"
+
+![Screenshot from 2024-04-03 16-07-26](https://github.com/harikesh1996/readme.md/assets/82168975/4ee9b3db-6cb9-4a23-bd12-39699447134c)
 
  
 	
