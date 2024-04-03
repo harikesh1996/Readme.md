@@ -163,7 +163,7 @@ Enter Bind DN password -> finish
   ![Screenshot from 2024-04-01 16-24-33](https://github.com/harikesh1996/readme.md/assets/82168975/bb027e41-422d-4c08-97e0-ebbde924dc1b)
 
 
-- >>> Run this command to add **"organisation.ldif"**
+- >>> Run this command to add **"group.ldif"**
 
         
     ldapadd -a -c -xH ldap://localhost:3389 -D "cn=Directory Manager" -W  -f group.ldif
