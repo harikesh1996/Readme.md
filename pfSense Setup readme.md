@@ -410,6 +410,8 @@ sudo nano /usr/lib/squid/ext_ldap_al_acl
 	USER_UID=$(echo $1 | cut -d "@" -f 1)
 	
 	ldapsearch -x -H "$LDAP_SERVER" -b "$SEARCH_BASE" -D "$BIND_DN" -w "$BIND_PW" -LLL "(uid=$USER_UID)" dn | grep -q "$1"
+ ![Screenshot from 2024-04-03 17-44-17](https://github.com/harikesh1996/readme.md/assets/82168975/ba4fffd3-daa2-4886-84b3-6eec87cbd9f8)
+
 
  
 
