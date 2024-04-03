@@ -149,17 +149,17 @@ Enter Bind DN password -> finish
    cat  group.ldif
 
 
-	    dn: cn=Admins,ou=Support,dc=keenable,dc=in
+	    dn: cn=Admins,ou=Support,dc=keenable,dc=com
 	    objectClass: top
 	    objectClass: groupOfUniqueNames
 	    cn: Admins
-	    uniqueMember: uid=user1,ou=Support,dc=keenable,dc=in
+	    uniqueMember: uid=user1,ou=Support,dc=keenable,dc=com
 	
-	    dn: cn=SupportTeam,ou=Support,dc=keenable,dc=in
+	    dn: cn=SupportTeam,ou=Support,dc=keenable,dc=com
 	    objectClass: top
 	    objectClass: groupOfUniqueNames
 	    cn: SupportTeam
-	    uniqueMember: uid=user2,ou=Support,dc=keenable,dc=in
+	    uniqueMember: uid=user2,ou=Support,dc=keenable,dc=com
   ![Screenshot from 2024-04-01 16-24-33](https://github.com/harikesh1996/readme.md/assets/82168975/bb027e41-422d-4c08-97e0-ebbde924dc1b)
 
 
