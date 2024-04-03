@@ -171,7 +171,87 @@ Enter Bind DN password -> finish
   ![Screenshot from 2024-04-01 16-27-09](https://github.com/harikesh1996/readme.md/assets/82168975/de8aac70-e827-4aaa-bf5f-d6ef89a8a913)
 
 
+#  6. SQUID Configuration on Container
+
+	 podman search squid	
+  ![Screenshot from 2024-04-03 14-37-36](https://github.com/harikesh1996/readme.md/assets/82168975/accdb792-b6a8-45ac-9bbf-bd92680415c8)
+
+	podman pull docker.io/ubuntu/squid
+![Screenshot from 2024-04-03 14-40-16](https://github.com/harikesh1996/readme.md/assets/82168975/1322e129-e183-47a2-966f-e4eac380258f)
+
+	 podman ps
+
+	 podman run  -d –name squid -p 3128:3128 docker.io/ubuntu/squid:latest
+  ![Screenshot from 2024-04-03 14-41-40](https://github.com/harikesh1996/readme.md/assets/82168975/07221fb0-4d34-4edd-9e12-82c9a6325d4b)
+
+	padman exec -it squid /bin/bash
+![Screenshot from 2024-04-03 14-42-40](https://github.com/harikesh1996/readme.md/assets/82168975/d9bd13f8-6ec5-4dfb-806a-1a00f6f062ed)
+
+
+Then, Going to squid Configuration file:
+
+	vim /etc/squid/squid.conf
+
  
+	 acl block_url dstdomain "/etc/squid/block.acl"
+	http_access deny block_url
+
+	auth_param basic program /usr/lib/squid/basic_ncsa_auth /etc/squid/passwd
+
+	acl squid_users proxy_auth REQUIRED
+	http_access allow squid_users
+
+	# LDAP Authentication Parameters
+	#auth_param basic program /usr/lib/squid/basic_ldap_auth \
+	#  -b "dc=fspl,dc=com" \
+	#  -h ldap://10.0.0.15:3389 \
+	#  -D "cn=Directory Manager" \
+	#  -w "redhat" \
+	#  -s sub \
+	#  -f "(&(objectclass=inetOrgPerson)(uid=%s))"
+
+	# Define LDAP Group ACL
+	#external_acl_type ldap_group %LOGIN /usr/lib/squid/ext_ldap_group_acl \
+	#  -b "dc=fspl,dc=com" \
+	#  -f "(&(objectclass=groupOfUniqueNames)(uniqueMember=%u))" \
+	#  -F uid="%s" \
+	#  -D "cn=Directory Manager" \
+	#  -w "redhat" \
+	#  -h ldap://10.0.0.15:3389
+	#acl user1_acl proxy_auth "/etc/squid/fsplusers.txt"
+	#acl block dstdomain "/etc/squid/block1.txt"
+	#http_access deny user1_acl block
+	#http_access allow user1_acl
+
+then, squid service restart 
+
+	podman restart squid
+ ![image](https://github.com/harikesh1996/readme.md/assets/82168975/93e071fd-b5ca-4bd4-9867-fd2d3aa0a9c2)
+
+ Then  going into the squid container.  
+ 
+		 podman exec -it squid /bin//bash
+
+- >> user & password create for squid ncsa auth
+
+![Screenshot from 2024-04-03 14-51-37](https://github.com/harikesh1996/readme.md/assets/82168975/b79f2a76-239c-4021-b28d-5c9748c5fe57)
+
+User & Password create for squid Authenticate
+
+	htpasswd -c /etc/squid/passwd harikesh
+
+ Then I am going to check the squid proxy server on the client machine for Access. 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
