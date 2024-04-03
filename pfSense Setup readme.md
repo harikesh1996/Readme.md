@@ -62,7 +62,7 @@ Bash Script:-
 
 Run this script…
 
-./ldap.ssh
+- >>> *./ldap.sh*
 
 Check pod list
 
@@ -144,35 +144,32 @@ Enter Bind DN password -> finish
 
       ldapadd -a -c -xH ldap://localhost:3389 -D "cn=Directory Manager" -W  -f organisation.ldif
 
-  ### [5.4]. Create 2 group inside Support 
-  cat  group.ldif
+  ### [5.4]. Create 2 group inside Support
+  
+   cat  group.ldif
 
 
- 	   dn: cn=Admins,ou=Support,dc=keenable,dc=in
-  
-  	   objectClass: top
-  
-           objectClass: groupOfUniqueNames
-  
-	   cn: Admins
-  
-           uniqueMember: uid=user1,ou=Support,dc=keenable,dc=in
+	    dn: cn=Admins,ou=Support,dc=keenable,dc=in
+	    objectClass: top
+	    objectClass: groupOfUniqueNames
+	    cn: Admins
+	    uniqueMember: uid=user1,ou=Support,dc=keenable,dc=in
+	
+	    dn: cn=SupportTeam,ou=Support,dc=keenable,dc=in
+	    objectClass: top
+	    objectClass: groupOfUniqueNames
+	    cn: SupportTeam
+	    uniqueMember: uid=user2,ou=Support,dc=keenable,dc=in
+  ![Screenshot from 2024-04-01 16-24-33](https://github.com/harikesh1996/readme.md/assets/82168975/bb027e41-422d-4c08-97e0-ebbde924dc1b)
 
-           dn: cn=SupportTeam,ou=Support,dc=keenable,dc=in
-  
-           objectClass: top
-  
-           objectClass: groupOfUniqueNames
-  
-           cn: SupportTeam
-  
-           uniqueMember: uid=user2,ou=Support,dc=keenable,dc=in
-  
 
 - >>> Run this command to add **"organisation.ldif"**
 
         
     ldapadd -a -c -xH ldap://localhost:3389 -D "cn=Directory Manager" -W  -f group.ldif
+
+  ![Screenshot from 2024-04-01 16-27-09](https://github.com/harikesh1996/readme.md/assets/82168975/de8aac70-e827-4aaa-bf5f-d6ef89a8a913)
+
 
  
 
