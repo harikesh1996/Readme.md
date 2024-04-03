@@ -108,32 +108,32 @@ Enter Bind DN password -> finish
 
 - **we have create 5 organisation ( Dev, Support, POC, Document,    Observability)**
 
-        dn: dc=keenable,dc=in
+        dn: dc=keenable,dc=com
         objectClass: top
         objectClass: domain
         dc: keenable
 
-        dn: ou=Dev,dc=keenable,dc=in
+        dn: ou=Dev,dc=keenable,dc=com
         objectClass: top
         objectClass: organizationalUnit
         ou: Dev
 
-        dn: ou=Support,dc=keenable,dc=in
+        dn: ou=Support,dc=keenable,dc=com
         objectClass: top
         objectClass: organizationalUnit
         ou: Support
 
-        dn: ou=POC,dc=keenable,dc=in
+        dn: ou=POC,dc=keenable,dc=com
         objectClass: top
         objectClass: organizationalUnit
         ou: POC
 
-        dn: ou=Document,dc=keenable,dc=in
+        dn: ou=Document,dc=keenable,dc=com
         objectClass: top
         objectClass: organizationalUnit
         ou: Document
 
-        dn: ou=Observability,dc=keenable,dc=in
+        dn: ou=Observability,dc=keenable,dc=com
         objectClass: top
         objectClass: organizationalUnit
         ou: Observability
