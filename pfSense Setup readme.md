@@ -241,6 +241,21 @@ User & Password create for squid Authenticate
 	htpasswd -c /etc/squid/passwd harikesh
 
  Then I am going to check the squid proxy server on the client machine for Access. 
+![Screenshot from 2024-04-03 14-57-05](https://github.com/harikesh1996/readme.md/assets/82168975/68c4fbcd-e474-44d2-a8a4-87369da1da89)
+
+
+==========================================================================
+# 7. Using  LDAP to authenticate Squid proxy users
+
+	podman run -dt --name pfsense-ldap -p 3391:3389 -v /home/client1/data:/data -e DS_SUFFIX_NAME=dc=keenable,dc=com -e DS_DM_PASSWORD=12345 quay.io/389ds/dirsrv
+![Screenshot from 2024-04-03 15-00-35](https://github.com/harikesh1996/readme.md/assets/82168975/d0794c6c-6780-4ce5-8eb6-8a9ee9e83e5c)
+
+
+	podman exec -it pfsense-ldap /bin/bash
+
+	dsconf -D "cn=Directory Manager" ldap://localhost:3389 backend suffix list
+
+  ![Screenshot from 2024-04-03 15-01-54](https://github.com/harikesh1996/readme.md/assets/82168975/8aaf2a4f-b132-4fd0-b7c9-47c22a12163c)
 
 
 
