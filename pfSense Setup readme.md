@@ -138,9 +138,43 @@ Enter Bind DN password -> finish
         objectClass: organizationalUnit
         ou: Observability
 
+![Screenshot from 2024-04-01 16-15-12](https://github.com/harikesh1996/readme.md/assets/82168975/4db2d666-1451-4499-9199-39286f556efd)
+
 - >>> Run this command to add **"organisation.ld"**
 
+      ldapadd -a -c -xH ldap://localhost:3389 -D "cn=Directory Manager" -W  -f organisation.ldif
 
+  ### [5.4]. Create 2 group inside Support 
+  cat  group.ldif
+
+
+ 	   dn: cn=Admins,ou=Support,dc=keenable,dc=in
+  
+  	   objectClass: top
+  
+           objectClass: groupOfUniqueNames
+  
+	   cn: Admins
+  
+           uniqueMember: uid=user1,ou=Support,dc=keenable,dc=in
+
+           dn: cn=SupportTeam,ou=Support,dc=keenable,dc=in
+  
+           objectClass: top
+  
+           objectClass: groupOfUniqueNames
+  
+           cn: SupportTeam
+  
+           uniqueMember: uid=user2,ou=Support,dc=keenable,dc=in
+  
+
+- >>> Run this command to add **"organisation.ldif"**
+
+        
+    ldapadd -a -c -xH ldap://localhost:3389 -D "cn=Directory Manager" -W  -f group.ldif
+
+ 
 
 
 
