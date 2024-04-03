@@ -274,7 +274,86 @@ objectClass: domain
 
 dc: keenable
 
+![Screenshot from 2024-04-03 15-09-43](https://github.com/harikesh1996/readme.md/assets/82168975/45ac652a-c4fc-4bbc-832a-42b1d412d99c)
 
+- >>> Run this command to add **"org.ldif"**
+
+	ldapadd -a -c -xH ldap://localhost:3389 -D "cn=Directory Manager" -W -f org.ldif
+![Screenshot from 2024-04-03 15-11-55](https://github.com/harikesh1996/readme.md/assets/82168975/a22378cc-2127-4a61-9ed0-b7163c81c758)
+![Screenshot from 2024-04-03 15-12-58](https://github.com/harikesh1996/readme.md/assets/82168975/c8190f09-bb75-4603-b6f6-efb6414376e1)
+
+client1@client1:~$ cat all.ldif
+
+	# LDIF for Organization with User IDs and Passwords
+
+	# Keenable
+	dn: o=Keenable,dc=keenable,dc=com
+	objectClass: top
+	objectClass: organization
+	o: Keenable
+	
+	# Employees
+	dn: ou=employees,o=Keenable,dc=keenable,dc=com
+	objectClass: top
+	objectClass: organizationalUnit
+	ou: employees
+	
+	# Rajiv Kumar in Employees
+	dn: cn=rajiv,ou=employees,o=Keenable,dc=keenable,dc=com
+	objectClass: top
+	objectClass: person
+	cn: rajiv
+	sn: kumar
+	userPassword: 12345
+	
+	# Harikesh chourasiya in Employees
+	dn: cn=Harikesh,ou=employees,o=Keenable,dc=keenable,dc=com
+	objectClass: top
+	objectClass: person
+	cn: harikesh
+	sn: chourasiya
+	userPassword: 12345
+	
+	# bheem prashad in Employees
+	dn: cn=bheem,ou=employees,o=Keenable,dc=keenable,dc=com
+	objectClass: top
+	objectClass: person
+	cn: bheem
+	sn: prashad
+	userPassword: 12345
+	
+	# TL
+	dn: ou=tl,o=Keenable,dc=keenable,dc=com
+	objectClass: top
+	objectClass: organizationalUnit
+	ou: tl
+	
+	# Amit Sir in TL
+	dn: cn=amitsir,ou=tl,o=Keenable,dc=keenable,dc=com
+	objectClass: top
+	objectClass: person
+	cn: amitsir
+	sn: sir
+	userPassword: 12345
+	
+	# Mentors
+	dn: ou=mentors,o=Keenable,dc=keenable,dc=com
+	objectClass: top
+	objectClass: organizationalUnit
+	ou: mentors
+	
+	# Pooja mam in mentors
+	dn: cn=poojama  ,ou=mentors,o=Keenable,dc=keenable,dc=com
+	objectClass: top
+	objectClass: person
+	cn: Poojamam
+	sn: mam
+	userPassword: 12345
+
+ 
+	
+	
+	
 
  
  
