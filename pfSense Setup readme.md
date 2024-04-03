@@ -102,6 +102,46 @@ Enter Bind DN name (cn= Directory Manager)
  
 Enter Bind DN password -> finish
 
+### [5.3].Create Organization_unit ldif file (file extension name , ldif ) 
+
+    cat organisation.ldif
+
+- **we have create 5 organisation ( Dev, Support, POC, Document,    Observability)**
+
+        dn: dc=keenable,dc=in
+        objectClass: top
+        objectClass: domain
+        dc: keenable
+
+        dn: ou=Dev,dc=keenable,dc=in
+        objectClass: top
+        objectClass: organizationalUnit
+        ou: Dev
+
+        dn: ou=Support,dc=keenable,dc=in
+        objectClass: top
+        objectClass: organizationalUnit
+        ou: Support
+
+        dn: ou=POC,dc=keenable,dc=in
+        objectClass: top
+        objectClass: organizationalUnit
+        ou: POC
+
+        dn: ou=Document,dc=keenable,dc=in
+        objectClass: top
+        objectClass: organizationalUnit
+        ou: Document
+
+        dn: ou=Observability,dc=keenable,dc=in
+        objectClass: top
+        objectClass: organizationalUnit
+        ou: Observability
+
+- >>> Run this command to add **"organisation.ld"**
+
+
+
 
 
 
