@@ -1,5 +1,4 @@
 # 1. Task Requirement
-
 Install and configure Ldap 389 DS in the containerised platform with persistence storage
 Create organisation keenable.in
 Create OU [Dev,Support,POC, Document, Observability]
