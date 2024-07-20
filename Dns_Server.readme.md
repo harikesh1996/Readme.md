@@ -46,4 +46,30 @@ Find the relevant network interface section and add the new DNS server informati
 
 ![image](https://github.com/user-attachments/assets/6fbed3c9-0fdd-43fb-ae17-886c9df833cc)
 
+    cat /etc/hosts
+    
+            127.0.0.1	localhost
+            192.168.122.56  dns.harikesh.com dns
+            ::1     ip6-localhost ip6-loopback
+            fe00::0 ip6-localnet
+            ff00::0 ip6-mcastprefix
+            ff02::1 ip6-allnodes
+            ff02::2 ip6-allrouters
+
+- >>> Check hostname & domainname
+
+
+
+  ![image](https://github.com/user-attachments/assets/5eb8363d-d6a0-46dd-bc91-e80918f68c8f)
+
+  Then Update System
+
+           sudo apt update -y
+  
+Installation of Bind9 
+
+        sudo apt install bind9 bind9utils bind9-doc
+    sudo apt install bind9 bind9utils bind9-doc
+
+
 
