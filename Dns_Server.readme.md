@@ -69,7 +69,27 @@ Find the relevant network interface section and add the new DNS server informati
 Installation of Bind9 
 
         sudo apt install bind9 bind9utils bind9-doc
-    sudo apt install bind9 bind9utils bind9-doc
 
+
+Checking 53 Port Open or Not.
+
+
+             harikesh@dns:/etc/netplan$  netstat -antu | grep 53
+            tcp        0      0 192.168.122.56:53       0.0.0.0:*               LISTEN     
+            tcp        0      0 192.168.122.56:53       0.0.0.0:*               LISTEN     
+            tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN     
+            tcp        0      0 127.0.0.1:953           0.0.0.0:*               LISTEN     
+            udp        0      0 0.0.0.0:42538           0.0.0.0:*                          
+            udp        0      0 192.168.122.56:53       0.0.0.0:*                          
+            udp        0      0 192.168.122.56:53       0.0.0.0:*                          
+            udp        0      0 127.0.0.53:53           0.0.0.0:*                          
+            udp        0      0 0.0.0.0:5353            0.0.0.0:*                          
+            udp6       0      0 :::5353                 :::* 
+
+
+            harikesh@dns:/etc/netplan$ sudo ufw allow Bind9
+            [sudo] password for harikesh: 
+            Skipping adding existing rule
+            Skipping adding existing rule (v6)
 
 
